@@ -6,8 +6,7 @@ import linkedin_logo from '../../assets/linkedin.webp';
 import github_logo from '../../assets/github.jpg';
 import instagram_logo from '../../assets/instagram.webp';
 import x_logo from '../../assets/x.avif';
-import { useTheme } from '../../theme/ThemeContext'; // Theme hook
-
+import { useTheme } from '../../Mode/ThemeContext';
 const Footer = () => {
   const { darkMode } = useTheme(); // Get current theme
   const logo = darkMode ? logo_dark : logo_light; // Switch based on mode

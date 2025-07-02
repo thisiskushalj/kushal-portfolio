@@ -1,7 +1,6 @@
 import React from 'react'
 import './certificate.css'
 import theme_pattern from '../../assets/theme_pattern.svg'
-import Services_Data from '../../assets/services_data'
 import Certificate_Data from '../../assets/mycertificate'
 
 const Certificate = () => {
