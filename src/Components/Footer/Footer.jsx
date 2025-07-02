@@ -15,18 +15,18 @@ const Footer = () => {
           <p>Full Stack Developer in the making — sharpening skills and building real-world projects.</p>
         </div>
         <div className="footer-top-right">
-          <div class="social-icons">
+          <div className="social-icons">
             <a href="https://www.linkedin.com/in/kushalj1/" target="_blank" aria-label="LinkedIn">
-              <img class='social-icon scale-upl' src={linkedin_logo} alt="LinkedIn" />
+              <img className='social-icon scale-upl' src={linkedin_logo} alt="LinkedIn" />
             </a>
             <a href="https://github.com/thisiskushalj" target="_blank" aria-label="GitHub">
-              <img class='social-icon' src={github_logo} alt="GitHub" />
+              <img className='social-icon' src={github_logo} alt="GitHub" />
             </a>
             <a href="https://www.instagram.com/_.kushal_1/" target="_blank" aria-label="Instagram">
-              <img class='social-icon scale-upi' src={instagram_logo} alt="Instagram" />
+              <img className='social-icon scale-upi' src={instagram_logo} alt="Instagram" />
             </a>
             <a href="https://x.com/KushalJ_2004" target="_blank" aria-label="Twitter">
-              <img class='social-icon' src={x_logo} alt="Twitter" />
+              <img className='social-icon' src={x_logo} alt="Twitter" />
             </a>
           </div>
         </div>

@@ -8,8 +8,9 @@ import project6_img from '../assets/project_6.png'
 const mywork_data = [
     {
         w_no:1,
-        w_name:"Crypto",
-        w_img:project1_img
+        w_name:"Spotify Clone",
+        w_img:project1_img,
+        w_link: "https://spotify-clone-six-bay.vercel.app/"
     },
     {
         w_no:2,
@@ -18,12 +19,12 @@ const mywork_data = [
     },
     {
         w_no:3,
-        w_name:"QR code generator",
+        w_name:"Crypto Website",
         w_img:project3_img
     },
     {
         w_no:4,
-        w_name:"Tic Tac Toe",
+        w_name:"QR Code Generator",
         w_img:project4_img
     },
     {
