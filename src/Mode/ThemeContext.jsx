@@ -4,17 +4,20 @@ const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("theme") === "dark";
+    // Check saved preference or default to dark mode
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme ? savedTheme === "dark" : true;
   });
 
   useEffect(() => {
-    // ✅ Set or remove 'light' class on <body>
+    // Toggle 'light' class on body based on darkMode
     if (darkMode) {
       document.body.classList.remove('light');
     } else {
       document.body.classList.add('light');
     }
 
+    // Save preference
     localStorage.setItem("theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
