@@ -38,29 +38,33 @@ const Contact = () => {
 
   return (
     <div id='contact' className='contact'>
-      <div className="title-box">
+      <div className="title-box" data-aos="fade-up" data-aos-duration="800">
         <h1>Get in touch</h1>
         <img src={theme_pattern} alt="" />
       </div>
 
       <div className="contact-section">
-        <div className="contact-left">
+        <div className="contact-left" data-aos="fade-right" data-aos-duration="1000">
           <h1>Let's Connect</h1>
-          <p>I’m currently open to exciting opportunities, internships, or collaborations. Whether it’s a project idea, a chance to work together, or just a tech chat — feel free to reach out anytime!</p>
+          <p>
+            I’m currently open to exciting opportunities, internships, or collaborations.
+            Whether it’s a project idea, a chance to work together, or just a tech chat —
+            feel free to reach out anytime!
+          </p>
           <div className="contact-details">
             <div className="contact-detail">
-              <img src={mail_icon} alt="" /> <p>kushalj400231@gmail.com</p>
+              <img src={mail_icon} alt="email" /> <p>kushalj400231@gmail.com</p>
             </div>
             <div className="contact-detail">
-              <img src={call_icon} alt="" /> <p>+91 8792876217</p>
+              <img src={call_icon} alt="call" /> <p>+91 8792876217</p>
             </div>
             <div className="contact-detail">
-              <img src={location_icon} alt="" /> <p>Bengaluru, India</p>
+              <img src={location_icon} alt="location" /> <p>Bengaluru, India</p>
             </div>
           </div>
         </div>
 
-        <form onSubmit={onSubmit} className="contact-right">
+        <form onSubmit={onSubmit} className="contact-right" data-aos="fade-left" data-aos-duration="1000">
           <label>Your Name</label>
           <input type="text" placeholder='Enter your name' name='name' required />
           <label>Your Email</label>

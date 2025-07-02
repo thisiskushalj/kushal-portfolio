@@ -14,24 +14,24 @@ const MyWork = () => {
   const [swiperInstance, setSwiperInstance] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-useEffect(() => {
-  if (
-    swiperInstance &&
-    swiperInstance.params &&
-    swiperInstance.params.navigation &&
-    prevRef.current &&
-    nextRef.current
-  ) {
-    swiperInstance.params.navigation.prevEl = prevRef.current;
-    swiperInstance.params.navigation.nextEl = nextRef.current;
+  useEffect(() => {
+    if (
+      swiperInstance &&
+      swiperInstance.params &&
+      swiperInstance.params.navigation &&
+      prevRef.current &&
+      nextRef.current
+    ) {
+      swiperInstance.params.navigation.prevEl = prevRef.current;
+      swiperInstance.params.navigation.nextEl = nextRef.current;
 
-    swiperInstance.navigation.init();
-    swiperInstance.navigation.update();
-  }
-}, [swiperInstance]);
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
+  }, [swiperInstance]);
 
   return (
-    <div id="projects" className="mywork">
+    <div id="projects" className="mywork" data-aos="fade-up" data-aos-duration="1000">
       <div className="title-box">
         <h1>My Projects</h1>
         <img src={theme_pattern} alt="pattern" className="title-pattern" />
