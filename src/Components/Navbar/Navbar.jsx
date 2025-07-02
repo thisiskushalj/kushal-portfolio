@@ -1,14 +1,21 @@
 import React, { useRef, useState } from 'react';
 import './Navbar.css';
-import logo from '../../assets/logo.png';
+import logo_light from '../../assets/logo_light.png';
+import logo_dark from '../../assets/logo.png';
+
+import menu_open_white from '../../assets/menu_open.svg';
+import menu_close_white from '../../assets/menu_close.svg';
+import menu_open_black from '../../assets/dark_open.png';
+import menu_close_black from '../../assets/dark_close.png';
+
 import underline from '../../assets/nav_underline.svg';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import menu_open from '../../assets/menu_open.svg';
-import menu_close from '../../assets/menu_close.svg';
+import { useTheme } from '../../theme/ThemeContext';
 
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
   const menuRef = useRef();
+  const { darkMode, setDarkMode } = useTheme();
 
   const openMenu = () => {
     menuRef.current.style.right = "0";
@@ -23,60 +30,40 @@ const Navbar = () => {
     closeMenu();
   };
 
+  const logo = darkMode ? logo_dark : logo_light;
+  const menuOpenIcon = darkMode ? menu_open_white : menu_open_black;
+  const menuCloseIcon = darkMode ? menu_close_white : menu_close_black;
+
   return (
     <div className='navbar'>
-      <img src={logo} alt="" className='logo' />
-      <img src={menu_open} onClick={openMenu} alt="" className='nav-mob-open' />
+      <img src={logo} alt="logo" className='logo' />
+      <img src={menuOpenIcon} onClick={openMenu} alt="open menu" className='nav-mob-open' />
+
       <ul ref={menuRef} className="nav-menu">
-        <img src={menu_close} onClick={closeMenu} alt="" className="nav-mob-close" />
+        <img src={menuCloseIcon} onClick={closeMenu} alt="close menu" className="nav-mob-close" />
 
-        <li>
-          <AnchorLink className='anchor-link' href='#home' offset={100}>
-            <p onClick={() => handleMenuClick("home")}>Home</p>
-          </AnchorLink>
-          {menu === "home" && <img src={underline} alt='' />}
-        </li>
+        {['home', 'about', 'skills', 'projects', 'certifications', 'contact'].map(section => (
+          <li key={section}>
+            <AnchorLink className='anchor-link' offset={50} href={`#${section}`}>
+              <p onClick={() => handleMenuClick(section)}>
+                {section === 'about' ? 'About Me' :
+                 section === 'skills' ? 'Expertise' :
+                 section.charAt(0).toUpperCase() + section.slice(1)}
+              </p>
+            </AnchorLink>
+            {menu === section && <img src={underline} alt='' />}
+          </li>
+        ))}
 
-        <li>
-          <AnchorLink className='anchor-link' offset={50} href='#about'>
-            <p onClick={() => handleMenuClick("about")}>About Me</p>
-          </AnchorLink>
-          {menu === "about" && <img src={underline} alt='' />}
-        </li>
-
-        <li>
-          <AnchorLink className='anchor-link' offset={50} href='#skills'>
-            <p onClick={() => handleMenuClick("skills")}>Expertise</p>
-          </AnchorLink>
-          {menu === "skills" && <img src={underline} alt='' />}
-        </li>
-
-        <li>
-          <AnchorLink className='anchor-link' offset={50} href='#projects'>
-            <p onClick={() => handleMenuClick("projects")}>Projects</p>
-          </AnchorLink>
-          {menu === "projects" && <img src={underline} alt='' />}
-        </li>
-
-        <li>
-          <AnchorLink className='anchor-link' offset={50} href='#certifications'>
-            <p onClick={() => handleMenuClick("certifications")}>Certifications</p>
-          </AnchorLink>
-          {menu === "certifications" && <img src={underline} alt='' />}
-        </li>
-
-        <li>
-          <AnchorLink className='anchor-link' offset={50} href='#contact'>
-            <p onClick={() => handleMenuClick("contact")}>Contact</p>
-          </AnchorLink>
-          {menu === "contact" && <img src={underline} alt='' />}
-        </li>
+        {/* ✅ Mobile toggle inside nav-menu */}
+        <div className="nav-connect mobile-toggle" onClick={() => setDarkMode(!darkMode)}>
+          <span className='icon-only'>{darkMode ? '☀️' : '🌙'}</span>
+        </div>
       </ul>
 
-      <div className="nav-connect">
-        <AnchorLink className='anchor-link' offset={50} href='#contact'>
-          Get in Touch
-        </AnchorLink>
+      {/* ✅ Desktop toggle outside nav-menu */}
+      <div className="nav-connect desktop-toggle" onClick={() => setDarkMode(!darkMode)}>
+        <span className='icon-only'>{darkMode ? '☀️' : '🌙'}</span>
       </div>
     </div>
   );

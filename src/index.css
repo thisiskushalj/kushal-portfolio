@@ -1,39 +1,109 @@
-*{
+/* =======================
+   RESET AND BASE STYLES
+========================== */
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
+
+body {
   min-height: 100vh;
-  background: #161513;
-  color: white;
-  font-family: 'outfit';
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.4s, color 0.4s;
 }
-.title-box{
+
+body, .navbar, .nav-menu, .nav-connect, .nav-menu li, .anchor-link {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+body,
+h1,
+p,
+a,
+button {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+
+/* =======================
+   THEME VARIABLES
+========================== */
+
+/* Default: Dark Mode */
+:root {
+  --bg: #161513;
+  --text: #ffffff;
+  --text-color: white;
+  --resume-border-color: white;
+  --primary: #973a97;
+}
+
+:root, [data-theme='dark'] {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Light Mode Overrides */
+body.light {
+  --bg: #ffffff;
+  --text: #000000;
+  --text-color: black;
+  --resume-border-color: black;
+}
+
+/* =======================
+   COMMON SECTIONS
+========================== */
+
+.navbar,
+.footer,
+.hero,
+.section {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* =======================
+   TITLE BOX STYLING
+========================== */
+
+.title-box {
   position: relative;
 }
-.title-box h1{
-  padding: 0px 30px;
+
+.title-box h1 {
+  padding: 0 30px;
   font-size: 60px;
   font-weight: 600;
 }
+
 .title-box img {
   position: absolute;
-  bottom: 4px; /* tweak this value to align exactly */
-  right: -4px; /* aligned with h1 padding */
+  bottom: 4px;
+  right: -4px;
   width: 160px;
   z-index: -1;
 }
-@media(max-width: 768px){
-  .about-title img{
-      width: 130px;
-      right: -20px;
+
+/* =======================
+   MEDIA QUERIES
+========================== */
+
+@media (max-width: 768px) {
+  .about-title img {
+    width: 130px;
+    right: -20px;
   }
-  .title-box h1{
-    padding: 0px;
+
+  .title-box h1 {
+    padding: 0;
     font-size: 40px;
   }
-  .title-box img{
+
+  .title-box img {
     width: 100px;
     right: -20px;
     bottom: 10px;

@@ -4,6 +4,15 @@
     flex-direction: column;
     gap: 20px;
 }
+
+.hero,
+.hero h1,
+.hero p,
+.hero-action,
+.hero-connect,
+.hero-resume {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
 .profile-img{
     margin-top: 30px;
     width: 240px;
@@ -19,7 +28,7 @@
 
 .hero-resume a {
     text-decoration: none;
-    color: white;
+    color: var(--text-color);
 }
 
 .hero p{
@@ -40,16 +49,21 @@
     border-radius: 50px;
     background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
     cursor: pointer;
+    color: white;
 }
+
+.hero-connect .anchor-link {
+  color: white;
+}
+
 .hero-resume{
     padding: 20px 55px;
     border-radius: 50px;
     border: 2px solid #FFF;
+    border: 2px solid var(--resume-border-color);
     cursor: pointer;
 }
-.hero-connect:hover{
-    border: 2px solid white;
-}
+
 .hero-resume:hover{
     border-color: #B415FF;
 }
@@ -62,7 +76,7 @@
 }
 
 .type-text{
-  color: white;
+  color: var(--text-color);
   font-weight: 600;
   white-space: nowrap;
 }

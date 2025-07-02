@@ -44,11 +44,6 @@
   box-sizing: border-box;
 }
 
-.carousel-img:hover {
-  transform: scale(1.03);
-  transition: 0.3s;
-}
-
 /* Custom arrows */
 .custom-nav-btn {
   font-size: 2.5rem;

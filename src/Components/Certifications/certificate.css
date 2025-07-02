@@ -33,6 +33,10 @@
     transition: 0.5s;
 }
 
+body.light .certificate-format {
+  border: 1px solid black;
+}
+
 @media (max-width: 768px) {
 
     .certifications{
