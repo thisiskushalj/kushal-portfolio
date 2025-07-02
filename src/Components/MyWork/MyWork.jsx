@@ -14,14 +14,21 @@ const MyWork = () => {
   const [swiperInstance, setSwiperInstance] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  useEffect(() => {
-    if (swiperInstance && prevRef.current && nextRef.current) {
-      swiperInstance.params.navigation.prevEl = prevRef.current;
-      swiperInstance.params.navigation.nextEl = nextRef.current;
-      swiperInstance.navigation.init();
-      swiperInstance.navigation.update();
-    }
-  }, [swiperInstance]);
+useEffect(() => {
+  if (
+    swiperInstance &&
+    swiperInstance.params &&
+    swiperInstance.params.navigation &&
+    prevRef.current &&
+    nextRef.current
+  ) {
+    swiperInstance.params.navigation.prevEl = prevRef.current;
+    swiperInstance.params.navigation.nextEl = nextRef.current;
+
+    swiperInstance.navigation.init();
+    swiperInstance.navigation.update();
+  }
+}, [swiperInstance]);
 
   return (
     <div id="projects" className="mywork">
