@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import './MyWork.css';
 import theme_pattern from '../../assets/theme_pattern.svg';
 import mywork_data from '../../assets/mywork_data';
@@ -11,7 +11,17 @@ import 'swiper/css/navigation';
 const MyWork = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const [swiperInstance, setSwiperInstance] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    if (swiperInstance && prevRef.current && nextRef.current) {
+      swiperInstance.params.navigation.prevEl = prevRef.current;
+      swiperInstance.params.navigation.nextEl = nextRef.current;
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
+  }, [swiperInstance]);
 
   return (
     <div id="projects" className="mywork">
@@ -21,23 +31,19 @@ const MyWork = () => {
       </div>
 
       <div className="carousel-row">
-        <div className={`custom-nav-btn ${currentSlide === 0 ? 'disabled' : ''}`} ref={prevRef}>❮</div>
+        <div
+          className={`custom-nav-btn ${currentSlide === 0 ? 'disabled' : ''}`}
+          ref={prevRef}
+        >
+          ❮
+        </div>
 
         <Swiper
           className="mywork-carousel"
           modules={[Navigation]}
           spaceBetween={30}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
-          onBeforeInit={(swiper) => {
-            swiper.params.navigation.prevEl = prevRef.current;
-            swiper.params.navigation.nextEl = nextRef.current;
-          }}
-          onSlideChange={(swiper) => {
-            setCurrentSlide(swiper.activeIndex);
-          }}
+          onSwiper={setSwiperInstance}
+          onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
           breakpoints={{
             0: { slidesPerView: 1 },
             640: { slidesPerView: 1 },
@@ -46,8 +52,17 @@ const MyWork = () => {
         >
           {mywork_data.map((work, index) => (
             <SwiperSlide key={index}>
-              <a href={work.w_link} target="_blank" rel="noopener noreferrer" className="project-slide">
-                <img src={work.w_img} alt={`work-${index}`} className="carousel-img" />
+              <a
+                href={work.w_link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-slide"
+              >
+                <img
+                  src={work.w_img}
+                  alt={`work-${index}`}
+                  className="carousel-img"
+                />
                 <div className="hover-overlay">
                   <p>{work.w_name}</p>
                 </div>
@@ -56,7 +71,14 @@ const MyWork = () => {
           ))}
         </Swiper>
 
-        <div className={`custom-nav-btn ${currentSlide === mywork_data.length - 1 ? 'disabled' : ''}`} ref={nextRef}>❯</div>
+        <div
+          className={`custom-nav-btn ${
+            currentSlide === mywork_data.length - 1 ? 'disabled' : ''
+          }`}
+          ref={nextRef}
+        >
+          ❯
+        </div>
       </div>
     </div>
   );
