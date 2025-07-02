@@ -18,6 +18,7 @@ useEffect(() => {
     duration: 800,     // animation duration in ms
     once: false,        // whether animation should happen only once
     easing: 'ease-in-out',
+    mirror: false,
     offset: 400,       // how far from viewport before triggering
   });
 }, []);
