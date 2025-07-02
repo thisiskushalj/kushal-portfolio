@@ -10,7 +10,7 @@ import menu_close_black from '../../assets/dark_close.png';
 
 import underline from '../../assets/nav_underline.svg';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { useTheme } from '../../theme/ThemeContext';
+import { useTheme } from '../../theme/ThemeProvider';
 
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
