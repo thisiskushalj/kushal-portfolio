@@ -22,23 +22,22 @@ Welcome to my personal portfolio website — a showcase of my skills, projects, 
 - 📱 Mobile responsive design
 - 🌙 Dark theme with linear gradient text styling
 
-# Folder Structure
+## 📁 Folder Structure
 
 ```bash
 src/
-├── assets/       # All images and icons
-├── components/   # Navbar, Hero, Contact, etc.
-├── App.jsx       # Main app component
-├── main.jsx      # ReactDOM render
-└── index.css     # Global styles
+├── assets/         # All images and icons
+├── components/     # Navbar, Hero, Contact, etc.
+├── App.jsx         # Main app component
+├── main.jsx        # ReactDOM render
+└── index.css       # Global styles
+```
 
+## 📬 Let's Connect
 
-## 📁 Let's Connect
-
-- ✉️ **Email:** kushalj400231@gmail.com  
+- ✉️ **Email:** [kushalj400231@gmail.com](mailto:kushalj400231@gmail.com)  
 - 🐦 **Twitter:** [@KushalJ_2004](https://twitter.com/KushalJ_2004)  
 - 💼 **LinkedIn:** [kushalj1](https://www.linkedin.com/in/kushalj1)  
 - 🌐 **Instagram:** [_.kushal_1](https://www.instagram.com/_.kushal_1)  
-- 📞 **Phone:** +91-879276217  
+- 📞 **Phone:** +91-8792876217  
 - 🐙 **GitHub:** [thisiskushalj](https://github.com/thisiskushalj)
-
