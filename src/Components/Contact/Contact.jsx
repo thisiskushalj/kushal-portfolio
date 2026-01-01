@@ -48,12 +48,12 @@ const Contact = () => {
           <h1>Let's Connect</h1>
           <p>
             I’m currently open to exciting opportunities, internships, or collaborations.
-            Whether it’s a project idea, a chance to work together, or just a tech chat —
+            Whether it’s a project idea, a chance to work together, or just a tech chat,
             feel free to reach out anytime!
           </p>
           <div className="contact-details">
             <div className="contact-detail">
-              <img src={mail_icon} alt="email" /> <p>kushalj400231@gmail.com</p>
+              <img src={mail_icon} alt="email" /> <p>heykushal.dev@gmail.com</p>
             </div>
             <div className="contact-detail">
               <img src={call_icon} alt="call" /> <p>+91 8792876217</p>

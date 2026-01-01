@@ -17,8 +17,8 @@ const About = () => {
         </div>
         <div className="about-right">
           <div className="about-para" data-aos="fade-up" data-aos-delay="200">
-            <p>A passionate Full Stack Developer who believes in building with purpose. Someone who finds genuine excitement in solving problems and creating things that others can use. I’m driven by curiosity — the kind that makes me take things apart just to see how they work, and then build them back better.</p>
-            <p>I believe learning consistently, working quietly and letting the results speak for themselves. This portfolio isn’t just a showcase of code — it’s a reflection of my journey, the late nights spent learning, and the excitement of turning ideas into real, working web experiences.</p>
+            <p>A passionate Full Stack Developer who believes in building with purpose. Someone who finds genuine excitement in solving problems and creating things that others can use. I’m driven by curiosity, the kind that makes me take things apart just to see how they work, and then build them back better.</p>
+            <p>I believe learning consistently, working quietly and letting the results speak for themselves. This portfolio isn’t just a showcase of code, it’s a reflection of my journey, the late nights spent learning, and the excitement of turning ideas into real, working web experiences.</p>
           </div>
           <div className="about-skills" data-aos="fade-up" data-aos-delay="300">
             <div className="about-skill"><p>Tech Curious</p><hr style={{width:"50%"}} /></div>

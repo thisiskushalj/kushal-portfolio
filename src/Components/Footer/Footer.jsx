@@ -16,7 +16,7 @@ const Footer = () => {
       <div className="footer-top">
         <div className="footer-top-left">
           <img id='footer-logo' src={logo} alt="logo" />
-          <p>Full Stack Developer in the making — sharpening skills and building real-world projects.</p>
+          <p>Full Stack Developer in the making, sharpening skills and building real-world projects.</p>
         </div>
         <div className="footer-top-right">
           <div className="social-icons">
